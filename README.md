@@ -21,8 +21,10 @@ exist:
 ## Creating a new repository
 GitHub repository owner creates a new repository on github, and clone it locally
 
+<span id="mySpan">inside span</span>
+
 ```{shell}
-*rocher$* git clone git@github.com:rocher/foobar-origin.git foobar
+rocher$ git clone git@github.com:rocher/foobar-origin.git foobar
 Cloning into 'foobar'...
 warning: You appear to have cloned an empty repository.
 
