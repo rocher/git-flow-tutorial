@@ -3,7 +3,6 @@
 # GitHub + git-flow Tutorial
 
 ## Introduction
-
 This tutorial shows how to use GitHub
 and [git-flow](https://github.com/petervanderdoes/gitflow-avh) together. To show
 in detail the use of git-flow, this tutorial is developed around an imaginary
@@ -20,7 +19,7 @@ software developers. In this scenario, following actors are included:
 ## Creating a new repository
 GitHub repository owner creates a new repository on github, and clone it locally
 
-```{bash}
+```{shell}
 rocher$ git clone git@github.com:rocher/foobar-origin.git foobar
 Cloning into 'foobar'...
 warning: You appear to have cloned an empty repository.
