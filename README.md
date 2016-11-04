@@ -45,9 +45,11 @@ In order to have more realistic examples, lets suppose following facts:
        in the directory `example`, which is a git repository, being `master` the
        currently checked out branch
      * there is an number at the beginning of each issued command
-     * commands are separated by a blank line
+     * blocks of commands and their respective output are separated by a blank
+       line
+     * examples end with a prompt
 
-     for example:
+     example:
      ```shell
      [1] ted> git init example
      Initialized empty Git repository in ted/example/.git/
@@ -56,6 +58,8 @@ In order to have more realistic examples, lets suppose following facts:
 
      [3] t/example (master)> branch
      * master
+
+     [x] t/example (master)>
      ```
 
 
@@ -64,12 +68,13 @@ In order to have more realistic examples, lets suppose following facts:
 GitHub repository owner creates a new repository on github, and clone it locally:
 
 ```{shell}
-rocher$ git clone git@github.com:rocher/foobar-origin.git foobar
+[1] rocher> git clone git@github.com:rocher/foobar-origin.git foobar
 Cloning into 'foobar'...
 warning: You appear to have cloned an empty repository.
 
-rocher$ cd foobar
-r/foobar (master)$ git flow init -d
+[2] rocher> cd foobar
+
+[3] r/foobar (master)> git flow init -d
 Using default branch names.
 No branches exist yet. Base branches must be created now.
 Branch name for production releases: [master]
@@ -84,5 +89,5 @@ Support branches? [support/]
 Version tag prefix? []
 Hooks and filters directory? [rocher/foobar/.git/hooks]
 
-r/foobar (develop)$
+[4] r/foobar (develop)>
 ```
