@@ -28,11 +28,11 @@ In order to have more realistic examples, lets suppose following facts:
   2. the integrator username is `ted`
   3. in the developers team we have `alice` and `bob`
   4. GitHub repository is used as a central, distribution point, so only
-     `master`, `develop` and `support/\*` branches should be there
-  5. `feature/\*` branches might be in GitHub when some team member must publish
+     `master`, `develop` and `support/*` branches should be there
+  5. `feature/*` branches might be in GitHub when some team member must publish
      a feature branch
   6. software development, integration, testing and release takes place locally,
-     so there is no need that neither `release/\*` nor `hotfix/\*` branches to be
+     so there is no need that neither `release/*` nor `hotfix/*` branches to be
      in GitHub
 
 
