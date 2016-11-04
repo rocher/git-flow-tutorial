@@ -6,9 +6,10 @@
     - [Introduction](#introduction)
         - [Tutorial context](#tutorial-context)
         - [Examples](#examples)
-    - [Create a new GitHub repository](#create-a-new-github-repository)
+    - [Create the main repository](#create-the-main-repository)
         - [Clone locally](#clone-locally)
         - [Initialize git-flow](#initialize-git-flow)
+        - [Synchronize initialization](#synchronize-initialization)
 
 <!-- markdown-toc end -->
 
@@ -123,7 +124,7 @@ start with simple, common files:
 
 ```shell
 [1] r/foobar (develop)> emacs README.md .gitignore
-    [ write some initial description in README.md and to be ignored files in .gitignore ]
+    [ write some initial description in README.md and files to be ignored in .gitignore ]
 
 [2] r/foobar (develop)> git add README.md .gitignore
 
@@ -147,6 +148,85 @@ To github.com:rocher/foobar-origin.git
 
 Note that the `master` branch has not been created in `foobar-origin`, but who
 cares? There are no releases to publish, so it is not needed at all.
+
+## Start working on features
+Ok, at this point your team is ready to implement cool features. The main idea
+is that each developer works locally on a feature, individually or in
+collaboration with other members.
+
+### Initial cloning
+Alice and Bob start by creating their local copies of `foobar-origin`
+repository. The example below shows how Alice would proceed, but the same
+applies to Bob:
+
+```shell
+[1] alice> git clone git@github.com:rocher/foobar-origin.git foobar
+Cloning into 'foobar'...
+remote: Counting objects: 6, done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 6 (delta 0), reused 6 (delta 0), pack-reused 0
+Receiving objects: 100% (6/6), done.
+warning: remote HEAD refers to nonexistent ref, unable to checkout.
+
+[2] alice> cd foobar
+
+[3] a/foobar (master)> git flow init -d
+Using default branch names.
+No branches exist yet. Base branches must be created now.
+Branch name for production releases: [master]
+Branch name for "next release" development: [develop]
+
+How to name your supporting branch prefixes?
+Feature branches? [feature/]
+Bugfix branches? [bugfix/]
+Release branches? [release/]
+Hotfix branches? [hotfix/]
+Support branches? [support/]
+Version tag prefix? []
+Hooks and filters directory? [alice/foobar/.git/hooks]
+
+[4] a/foobar (develop)> branch
+* develop
+  master
+
+[5] a/foobar (develop)> ls -a1
+total 20
+./
+../
+.git/
+.gitignore
+README.md
+
+[-] a/foobar (develop)>
+```
+
+### Creating a new feature branch
+Once the local repository has been cloned from `foobar-origin` and
+*git-flow-initialized*, it's time to create the first feature branch:
+
+```shell
+[1] a/foobar (develop)> git flow feature start analytic-algorithm
+Switched to a new branch 'feature/analytic-algorithm'
+
+Summary of actions:
+- A new branch 'feature/analytic-algorithm' was created, based on 'develop'
+- You are now on branch 'feature/analytic-algorithm'
+
+Now, start committing on your feature. When done, use:
+
+     git flow feature finish analytic-algorithm
+
+[-] a/foobar (feature/analytic-algorithm)>
+```
+
+Feature branches can be used (but you're not advised to do) as a kind of
+*backup* branches. The question is that
+
+> if only one developer is working in feature branch, then all commits can be
+> safely pushed, even when compilation fails
+
+That's completely false for other branches, or for feature branches shared
+between team members. So please make sure how you use feature branches.
 
 
 [git-flow]: https://github.com/petervanderdoes/gitflow-avh
