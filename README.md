@@ -7,8 +7,7 @@
 # GitHub + git-flow Tutorial
 
 ## Introduction
-This tutorial shows how to use GitHub
-and [git-flow](https://github.com/petervanderdoes/gitflow-avh) together.
+This tutorial shows how to use GitHub and [git-flow] together.
 
 To show in detail the use of git-flow, this tutorial is developed around an
 imaginary open-source project called `foobar` (yes, seriously), developed by a
@@ -47,7 +46,7 @@ In order to have more realistic examples, lets suppose following facts:
      * there is an number at the beginning of each issued command
      * blocks of commands and their respective output are separated by a blank
        line
-     * examples end with a prompt
+     * examples end with a single prompt
 
      example:
      ```shell
@@ -65,7 +64,10 @@ In order to have more realistic examples, lets suppose following facts:
 
 
 ## Creating a new repository
-GitHub repository owner creates a new repository on github, and clone it locally:
+The very first thing to do, when starting from scratch, is to create a new
+GitHub repository. Please
+check [GitHub documentation][1] on
+how to do this
 
 ```{shell}
 [1] rocher> git clone git@github.com:rocher/foobar-origin.git foobar
@@ -89,5 +91,9 @@ Support branches? [support/]
 Version tag prefix? []
 Hooks and filters directory? [rocher/foobar/.git/hooks]
 
-[4] r/foobar (develop)>
+[-] r/foobar (develop)>
 ```
+
+
+[git-flow]: https://github.com/petervanderdoes/gitflow-avh
+[1]: https://help.github.com/articles/create-a-repo
