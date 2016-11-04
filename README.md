@@ -24,7 +24,9 @@ exist:
 
 In order to have more realistic examples, lets suppose following facts:
 
-  1. the maintainer username is `rocher`
+  1. the maintainer username is `rocher` (it's the GitHub username I'm using to
+     develop and maintain this tutorial; change it for `lee`, if you feel more
+     comfortable)
   2. the integrator username is `ted`
   3. in the developers team we have `alice` and `bob`
   4. GitHub repository is used as a central, distribution point, so only
