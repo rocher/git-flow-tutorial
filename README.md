@@ -74,14 +74,14 @@ In order to have more realistic examples, lets suppose following facts:
      [-] t/example (master)>
      ```
 
+## Create the main repository
+When starting from scratch, the very first thing to do is to create a new GitHub
+repository. Please check [GitHub documentation][1] on how to do this.
 
-
-## Create a new GitHub repository
-The very first thing to do, when starting from scratch, is to create a new
-GitHub repository. Please check [GitHub documentation][1] on how to do this. The
-repository is called `foobar-origin` to emphasize that this is the main public
-reference of the project, where versions are released and contributors can send
-pull requests.
+In this tutorial, the project is called `foobar`, so the main repository is
+named `foobar-origin` to emphasize that this is the main public reference of the
+project, where versions are released, contributors can send pull requests and
+and package integrator can download the source code.
 
 Once created, the maintainer makes a local copy in order to initialize
 `git-flow`.
@@ -116,6 +116,37 @@ Hooks and filters directory? [rocher/foobar/.git/hooks]
 
 [-] r/foobar (develop)>
 ```
+
+### Synchronize initialization
+At this point, local `foobar` has two branches but no files, so it is better to
+start with simple, common files:
+
+```shell
+[1] r/foobar (develop)> emacs README.md .gitignore
+    [ write some initial description in README.md and to be ignored files in .gitignore ]
+
+[2] r/foobar (develop)> git add README.md .gitignore
+
+[3] r/foobar (develop)> git commit -m 'Add basic files'
+[develop 3eb00b8] Add basic files
+ 2 files changed, 3 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 README.md
+
+[4] r/foobar (develop)> git push origin develop
+Counting objects: 6, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (6/6), 500 bytes | 0 bytes/s, done.
+Total 6 (delta 0), reused 0 (delta 0)
+To github.com:rocher/foobar-origin.git
+ * [new branch]      develop -> develop
+
+[-] r/foobar (develop)>
+```
+
+Note that the `master` branch has not been created in `foobar-origin`, but who
+cares? There are no releases to publish, so it is not needed at all.
 
 
 [git-flow]: https://github.com/petervanderdoes/gitflow-avh
