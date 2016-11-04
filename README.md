@@ -10,6 +10,9 @@
         - [Clone locally](#clone-locally)
         - [Initialize git-flow](#initialize-git-flow)
         - [Synchronize initialization](#synchronize-initialization)
+    - [Start working on features](#start-working-on-features)
+        - [Initial cloning](#initial-cloning)
+        - [Creating a new feature branch](#creating-a-new-feature-branch)
 
 <!-- markdown-toc end -->
 
@@ -222,8 +225,8 @@ Now, start committing on your feature. When done, use:
 Feature branches can be used (but you're not advised to do) as a kind of
 *backup* branches. The question is that
 
-> if only one developer is working in feature branch, then all commits can be
-> safely pushed, even when compilation fails
+  > if only one developer is working on a feature branch, then all commits can be
+  > safely pushed, even when compilation fails or something else is broken.
 
 That's completely false for other branches, or for feature branches shared
 between team members. So please make sure how you use feature branches.
