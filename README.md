@@ -1,5 +1,9 @@
 <!--*- mardown-mode, auto-fill, flyspell -*-->
 
+# [ *work in progress* ]
+
+---
+
 # GitHub + git-flow Tutorial
 
 ## Introduction
@@ -13,27 +17,28 @@ exist:
 
   1. a *maintainer*, responsible to announce, publish and release new versions,
      make hot fixes and give support to old releases
-  2. an *integrator*, responsible of the integration of the features the team is
-     producing and to provide a suitable environment for testing
+  2. an *integrator*, responsible of the continuous integration of the features
+     the team is producing and to provide a suitable environment for testing
   3. a *team of developers*, responsible of the design and implementation of the
      desired features in the product
 
+In order to have more realistic examples, lets suppose following facts:
+
+  1. the maintainer username is `rocher`
+  2. the integrator username is `ted`
+  3. in the developers team we have `alice` and `bob`
+  4. GitHub repository is used as a central, distribution point, so only
+     `master`, `develop` and `support/\*` branches should be there
+  5. `feature/\*` branches might be in GitHub when some team member must publish
+     a feature branch
+  6. software development, integration, testing and release takes place locally,
+     so there is no need that neither `release/\*` nor `hotfix/\*` branches to be
+     in GitHub
+
+
+
 ## Creating a new repository
-GitHub repository owner creates a new repository on github, and clone it locally
-
-<style type="text/css">
-  div.shell {
-    display: block;
-    border: solid 1px #ccc;
-    border-radius: 7px;
-    color: #444;
-  }
-</style>
-
-<div class="shell">
-  <span class="prompt">rocher$</span>
-  <span class="command">git clone git@github.com:rocher/foobar-origin.git foobar</span>
-</div>
+GitHub repository owner creates a new repository on github, and clone it locally:
 
 ```{shell}
 rocher$ git clone git@github.com:rocher/foobar-origin.git foobar
