@@ -36,18 +36,25 @@ In order to have more realistic examples, lets suppose following facts:
   6. software development, integration, testing and release takes place locally,
      so there is no need that neither `release/*` nor `hotfix/*` branches to be
      in GitHub
-  7. the *shell* examples are written in a `fish`-like look & feel, that is, the
-     prompt shows the path, when in a git repository, the current checked out
-     branch, for example:
+  7. the *shell* examples are written in a `fish`*-like* look & feel:
+     * the prompt shows only the path, with abbreviated parent directories
+     * the root path is the same as the username, so `ted>` indicates the home
+       directory of `ted`
+     * when in a git repository, the current checked out branch is shown in
+       parenthesis, so `t/example (master)>` indicates that `ted` is currently
+       in the directory `example`, which is a git repository, being `master` the
+       currently checked out branch
+     * there is an number at the beginning of each issued command
+     * commands are separated by a blank line
+
+     for example:
      ```shell
-     rocher$ git init example
-     Initialized empty Git repository in rocher/example/.git/
+     [1] ted> git init example
+     Initialized empty Git repository in ted/example/.git/
 
-     rocher$ cd example
+     [2] ted> cd example
 
-     r/example (master)$ branch
-
-     r/example (master)$
+     [3] t/example (master)> branch
      * master
      ```
 
