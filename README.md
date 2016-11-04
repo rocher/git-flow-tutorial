@@ -2,21 +2,27 @@
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-generate-toc again -->
 **Table of Contents**
 
-- [*wip* GitHub + git-flow Tutorial](#wip-github--git-flow-tutorial)
+- [(*wip*) GitHub + git-flow Tutorial](#wip-github--git-flow-tutorial)
     - [Introduction](#introduction)
+        - [Tutorial context](#tutorial-context)
+        - [Examples](#examples)
     - [Creating a new repository](#creating-a-new-repository)
 
 <!-- markdown-toc end -->
 
-# *wip* GitHub + git-flow Tutorial
+# (*wip*) GitHub + git-flow Tutorial
 
 ## Introduction
 This tutorial shows how to use GitHub and [git-flow] together.
 
 To show in detail the use of git-flow, this tutorial is developed around an
-imaginary open-source project called `foobar` (yes, seriously), developed by a
-team of software developers. In this scenario, following actors are supposed to
-exist:
+imaginary open-source project called `foobar`, developed by a team of software
+developers. The same works for a private, closed software project, and for
+projects with a different role assignment or software development methodologies.
+
+### Tutorial context
+In the context of this tutorial, the following actors are supposed to exist and
+to actively participate in some part of the software development cycle:
 
   1. a *maintainer*, responsible to announce, publish and release new versions,
      make hot fixes and give support to old releases
@@ -25,6 +31,7 @@ exist:
   3. a *team of developers*, responsible of the design and implementation of the
      desired features in the product
 
+### Examples
 In order to have more realistic examples, lets suppose following facts:
 
   1. the maintainer username is `rocher` (it's the GitHub username I'm using to
@@ -67,20 +74,30 @@ In order to have more realistic examples, lets suppose following facts:
 
 
 
-## Creating a new repository
+## Create a new GitHub repository
 The very first thing to do, when starting from scratch, is to create a new
-GitHub repository. Please
-check [GitHub documentation][1] on
-how to do this
+GitHub repository. Please check [GitHub documentation][1] on how to do this. The
+repository is called `foobar-origin` to emphasize that this is the main public
+reference of the project, where versions are released and contributors can send
+pull requests.
 
+Once created, the maintainer makes a local copy in order to initialize
+`git-flow`.
+
+### Clone locally
 ```{shell}
 [1] rocher> git clone git@github.com:rocher/foobar-origin.git foobar
 Cloning into 'foobar'...
 warning: You appear to have cloned an empty repository.
 
-[2] rocher> cd foobar
+[-] rocher>
+```
 
-[3] r/foobar (master)> git flow init -d
+### Initialize git-flow
+```shell
+[1] rocher> cd foobar
+
+[2] r/foobar (master)> git flow init -d
 Using default branch names.
 No branches exist yet. Base branches must be created now.
 Branch name for production releases: [master]
