@@ -51,12 +51,12 @@ In order to have more realistic examples, lets suppose following facts:
 
      example:
      ```shell
-     [1] ted> git init example
+     [x] ted> git init example
      Initialized empty Git repository in ted/example/.git/
 
-     [2] ted> cd example
+     [x] ted> cd example
 
-     [3] t/example (master)> branch
+     [x] t/example (master)> branch
      * master
 
      [x] t/example (master)>
