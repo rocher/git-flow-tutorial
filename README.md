@@ -6,7 +6,9 @@
     - [Introduction](#introduction)
         - [Tutorial context](#tutorial-context)
         - [Examples](#examples)
-    - [Creating a new repository](#creating-a-new-repository)
+    - [Create a new GitHub repository](#create-a-new-github-repository)
+        - [Clone locally](#clone-locally)
+        - [Initialize git-flow](#initialize-git-flow)
 
 <!-- markdown-toc end -->
 
