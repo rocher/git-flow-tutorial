@@ -36,6 +36,20 @@ In order to have more realistic examples, lets suppose following facts:
   6. software development, integration, testing and release takes place locally,
      so there is no need that neither `release/*` nor `hotfix/*` branches to be
      in GitHub
+  7. the *shell* examples are written in a `fish`-like look & feel, that is, the
+     prompt shows the path, when in a git repository, the current checked out
+     branch, for example:
+     ```shell
+     rocher$ git init example
+     Initialized empty Git repository in rocher/example/.git/
+
+     rocher$ cd example
+
+     r/example (master)$ branch
+
+     r/example (master)$
+     * master
+     ```
 
 
 
