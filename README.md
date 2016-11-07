@@ -12,7 +12,8 @@
         - [Synchronize initialization](#synchronize-initialization)
     - [Start working on features](#start-working-on-features)
         - [Initial cloning](#initial-cloning)
-        - [Creating a new feature branch](#creating-a-new-feature-branch)
+        - [Create a new feature branch](#create-a-new-feature-branch)
+        - [Push some work](#push-some-work)
 
 <!-- markdown-toc end -->
 
@@ -233,10 +234,13 @@ Feature branches can be used (but you're not advised to do) as a kind of
 That's completely false for other branches, or for feature branches shared
 between team members. So please make sure how you use feature branches.
 
-### Push some work
+### Publish some work
 Alice has partially finished her work. She wants to share some ideas with other
 team members, and for that reason she needs to push her files. At this moment,
 no one is going to work with her code, just read it.
+
+She could push her work as usual, but in git flow it is better to *publish* a
+feature branch:
 
 ```shell
 [1] a/foobar (feature/analytic-algorithm)> git add 01-analytic-algorithm.txt
@@ -246,40 +250,25 @@ no one is going to work with her code, just read it.
  1 file changed, 1 insertion(+)
  create mode 100644 01-analytic-algorithm.txt
 
-[3] a/foobar (feature/analytic-algorithm)> git push
-fatal: The current branch feature/analytic-algorithm has no upstream branch.
-To push the current branch and set the remote as upstream, use
-
-    git push --set-upstream origin feature/analytic-algorithm
-
-[4] a/foobar (feature/analytic-algorithm)> git push --set-upstream origin feature/analytic-algorithm
+[3] a/foobar (feature/analytic-algorithm)> git flow feature publish
 Counting objects: 3, done.
 Delta compression using up to 8 threads.
 Compressing objects: 100% (3/3), done.
-Writing objects: 100% (3/3), 398 bytes | 0 bytes/s, done.
+Writing objects: 100% (3/3), 391 bytes | 0 bytes/s, done.
 Total 3 (delta 0), reused 0 (delta 0)
 To github.com:rocher/foobar-origin.git
  * [new branch]      feature/analytic-algorithm -> feature/analytic-algorithm
 Branch feature/analytic-algorithm set up to track remote branch feature/analytic-algorithm from origin.
+Already on 'feature/analytic-algorithm'
+Your branch is up-to-date with 'origin/feature/analytic-algorithm'.
+
+Summary of actions:
+- The remote branch 'feature/analytic-algorithm' was created or updated
+- The local branch 'feature/analytic-algorithm' was configured to track the remote branch
+- You are now on branch 'feature/analytic-algorithm'
 
 [-] a/foobar (feature/analytic-algorithm)>
 ```
-
-As we can see in `[3]`, branch `feature/analytic-algorithm` has not been created
-in `foobar-origin`, so git suggest us to set it as an *upstream branch*
-
-Alternatively, in `[4]` we could simply use
-
-  ```shell
-  [4] a/foobar (feature/analytic-algorithm)> git push origin feature/analytic-algorithm
-  Counting objects: 3, done.
-  Delta compression using up to 8 threads.
-  Compressing objects: 100% (3/3), done.
-  Writing objects: 100% (3/3), 398 bytes | 0 bytes/s, done.
-  Total 3 (delta 0), reused 0 (delta 0)
-  To github.com:rocher/foobar-origin.git
-   * [new branch]      feature/analytic-algorithm -> feature/analytic-algorithm
-  ```
 
 
 
